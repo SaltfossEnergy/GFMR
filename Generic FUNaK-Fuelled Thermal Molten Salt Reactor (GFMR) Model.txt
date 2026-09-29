@@ -1,0 +1,14 @@
+﻿Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR) Model
+Overview
+This repository provides the design and geometrical specifications for a Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR). The GFMR is intended as a reference problem for the modeling and simulation of molten salt reactors, capturing many of the essential physical phenomena relevant to graphite-moderated MSR systems.
+IMPORTANT: This model describes a generic reference design. It is NOT the proprietary Saltfoss reactor design. It is provided as a benchmark and educational tool for the broader nuclear engineering community.
+The model is described in detail in the attached PDF document. It is designed to be software-agnostic and can be implemented using a single-physics approach or within a complex multiphysics framework.
+
+Key Model Features
+* Fuel & Moderator: Utilizes FUNaK fuel salt with graphite moderation.
+* Thermal Power: 150 MW.
+* Core Geometry: A reactor height of 360 cm and a reflector diameter of 350 cm, featuring 379 fuel channels arranged in a hexagonal lattice.
+* Zoned Velocity: A distinctive two-zone fuel velocity configuration (inner and outer regions) designed to optimize heat removal from the central region of the core.
+* Control System: Nine Hafnium absorber control rods enclosed in Hastelloy N guide tubes.
+
+DISCLAIMER: This model is provided “as is”, without any representation or warranty of any kind, express or implied, including but not limited to the warranties of merchantability, accuracy, completeness, usefulness, fitness for a particular purpose and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in contract, tort or otherwise, arising out of or in connection with this model or its use.
