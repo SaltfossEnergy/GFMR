@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <meta name="theme-color" content="#1b1b1b">
+  <link rel="preload" href="{{ 'assets/fonts/Geist.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+{% endblock %}
+
+{% block content %}
+  {% if page and page.meta and page.meta.eyebrow %}
+    <p class="page-eyebrow">{{ page.meta.eyebrow }}</p>
+  {% endif %}
+  {{ super() }}
+  {% if page and page.meta and page.meta.source %}
+    <p class="source-note">{{ page.meta.source }}</p>
+  {% endif %}
+{% endblock %}

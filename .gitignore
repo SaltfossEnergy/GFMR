@@ -1,0 +1,10 @@
+.venv/
+site/
+__pycache__/
+*.pyc
+.cache/
+.DS_Store
+preview-artifacts/
+# The original PDF includes a section intentionally omitted from this publication.
+# Keep the source locally; publish only the curated Markdown and figures.
+GFMR_ref.pdf

@@ -1,0 +1,90 @@
+site_name: GFMR
+site_description: Generic FUNaK-Fuelled Thermal Molten Salt Reactor — a reference model for modelling and simulation.
+site_author: Thomas Sclauzero and Lubomír Bureš
+site_url: https://SaltfossEnergy.github.io/GFMR/
+repo_name: SaltfossEnergy/GFMR
+repo_url: https://github.com/SaltfossEnergy/GFMR
+edit_uri: ""
+docs_dir: docs
+site_dir: site
+use_directory_urls: false
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  font: false
+  logo: assets/images/gfmr-mark.svg
+  favicon: assets/images/gfmr-mark.svg
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - The model:
+      - Overview: overview.md
+      - Design parameters: parameters.md
+      - Channel hydraulics: hydraulics.md
+      - Core lifetime: lifetime.md
+  - Geometry: geometry.md
+  - Materials: materials.md
+  - References: references.md
+  - Disclaimer: disclaimer.md
+
+plugins:
+  - search
+  - offline
+
+hooks:
+  - hooks/site.py
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 2-3
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: [includes]
+      check_paths: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/figures.js
+
+extra:
+  generator: false
+
+watch:
+  - includes
+  - overrides
+  - hooks
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+  links:
+    not_found: warn
+    unrecognized_links: warn
+    anchors: warn

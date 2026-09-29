@@ -1,0 +1,1 @@
+**IMPORTANT:** This model describes a generic reference design. It is NOT the proprietary Saltfoss reactor design. It is provided as a benchmark and educational tool for the broader nuclear engineering community.
