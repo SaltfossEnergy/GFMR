@@ -82,13 +82,4 @@ Optional browser checks:
 
 These check all pages at desktop and mobile widths, search, navigation, image enlargement, and downloads. Screenshots and a report are written to `preview-artifacts/` (ignored by Git).
 
-## Publish to GitHub Pages later
-
-Nothing is published by building or previewing locally.
-
-1. Upload the website source to `SaltfossEnergy/GFMR`, including `docs/`, `includes/`, `hooks/`, `overrides/`, `scripts/`, the original `.txt` and PNGs, `mkdocs.yml`, `requirements.txt`, and `.github/workflows/website.yml`.
-2. In the repository's **Settings → Pages**, select **GitHub Actions** as the source.
-3. In **Actions → Website**, choose **Run workflow**, select `main`, and tick **Publish the built website to GitHub Pages**.
-
-The workflow checks builds on pushes to `main` and on pull requests. Deployment happens only on an explicit manual run with the publish option selected. It uses the Pages artifact, so no `gh-pages` branch is needed. The configured address is `https://SaltfossEnergy.github.io/GFMR/`.
 
