@@ -4,6 +4,11 @@ A local, Markdown-based publication of the **Generic FUNaK-Fuelled Thermal Molte
 
 **IMPORTANT:** This model describes a generic reference design. It is NOT the proprietary Saltfoss reactor design. It is provided as a benchmark and educational tool for the broader nuclear engineering community.
 
+## Disclaimer
+
+This model is provided “as is”, without any representation or warranty of any kind, express or implied, including but not limited to the warranties of merchantability, accuracy, completeness, usefulness, fitness for a particular purpose and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in contract, tort or otherwise, arising out of or in connection with this model or its use.
+
+
 ## Preview locally
 
 Requires Python 3.10 or newer. From this directory:
@@ -87,6 +92,3 @@ Nothing is published by building or previewing locally.
 
 The workflow checks builds on pushes to `main` and on pull requests. Deployment happens only on an explicit manual run with the publish option selected. It uses the Pages artifact, so no `gh-pages` branch is needed. The configured address is `https://SaltfossEnergy.github.io/GFMR/`.
 
-## Disclaimer
-
-This model is provided “as is”, without any representation or warranty of any kind, express or implied, including but not limited to the warranties of merchantability, accuracy, completeness, usefulness, fitness for a particular purpose and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in contract, tort or otherwise, arising out of or in connection with this model or its use.
