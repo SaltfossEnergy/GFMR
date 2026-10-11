@@ -20,7 +20,7 @@ Saltfoss Energy ApS, 2026
 
 Sclauzero, T., & Bureš, L. (2026). *Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR): Reference specification*. Saltfoss Energy ApS. [GFMR website](https://SaltfossEnergy.github.io/GFMR/).
 
-For now, include your access date and, when applicable, the [repository](https://github.com/SaltfossEnergy/GFMR) commit used in your work. Machine-readable citation metadata is available in [CITATION.cff](https://github.com/SaltfossEnergy/GFMR/blob/main/CITATION.cff).
+For now, include your access date and, when applicable, the [repository](https://github.com/SaltfossEnergy/GFMR) commit used in your work. Machine-readable citation metadata is available in [CITATION.cff](assets/CITATION.cff), also included in the repository.
 
 A Zenodo DOI has not yet been assigned. Once a version of the specification is archived, this page and the citation metadata will be updated with its DOI. Cite the DOI for the specific version used for reproducible comparisons.
 

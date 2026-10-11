@@ -16,6 +16,8 @@ The repository and website are licensed under the [Apache License, Version 2.0](
 
 Third-party components retain their own licences; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The [website licence page](docs/licenses.md) describes the scope and attribution.
 
+Original implementation and configuration files carry the Apache 2.0 copyright and licence declaration. The website build includes copies of `LICENSE`, `NOTICE`, third-party notices, and `CITATION.cff`, so the published or downloaded website carries its licence and citation metadata too.
+
 **IMPORTANT:** This model describes a generic reference design. It is NOT the proprietary Saltfoss reactor design. It is provided as a benchmark and educational tool for the broader nuclear engineering community.
 
 See [Disclaimer & intended use](https://SaltfossEnergy.github.io/GFMR/disclaimer.html) for the full disclaimer.
@@ -34,7 +36,7 @@ python3 -m venv .venv
 
 A Zenodo DOI has not yet been assigned. For the first archive:
 
-1. Complete the remaining material-property specifications and choose a release version.
+1. Review the reference specification and choose a release version.
 2. Connect the repository to Zenodo, using its [GitHub archiving instructions](https://help.zenodo.org/docs/github/archive-software/github-upload/), or upload a versioned archive containing the specification and built website.
 3. Include Thomas Sclauzero and Lubomír Bureš as authors and Saltfoss Energy ApS as the owner/publisher.
 4. Add the assigned version DOI, release version, and release date to `CITATION.cff`; update `docs/references.md` to match. Use the version DOI when comparing results against that specification.
