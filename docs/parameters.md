@@ -1,7 +1,6 @@
 ---
 title: Design parameters
-eyebrow: THE MODEL / DESIGN PARAMETERS
-source: "Source: GFMR reference, Introduction and Main Design Parameters (p. 1); Control Rod Channel Geometry, Table 2 (p. 2)."
+eyebrow: MODEL / DESIGN PARAMETERS
 ---
 
 # Design parameters
@@ -24,8 +23,7 @@ The main geometrical and design parameters of the GFMR reference model.
 | Hexagon pitch | 14 cm |
 | Control rod insertion | 36 cm nominal |
 
-The introduction describes the 350 cm dimension as the **reflector diameter**; the Main Design Parameters table labels the corresponding 3.5 m dimension **core diameter**. Both labels are retained here as given in the reference.
-{ .source-note }
+The 3.5 m dimension is the **reflector diameter** in the geometry description and is labelled **core diameter** in the main design parameters.
 
 ## Core configuration
 
@@ -43,8 +41,6 @@ Nine control rods are placed directly inside the fuel channels. Each Hastelloy N
 | Absorber diameter | 1.3 cm |
 | Guide tube thickness | 0.2 cm |
 | Void gap thickness | 0.1 cm |
-
-*Table 2 in the reference: Dimensions listed for the control rod channel.*
 
 During nominal operation, the control rods are assumed to be inserted to a depth of **36 cm**.
 

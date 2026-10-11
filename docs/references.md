@@ -1,18 +1,34 @@
 ---
 title: References
 eyebrow: DOCUMENTATION / REFERENCES
-source: "Source: GFMR reference, title page and References (p. 8)."
 ---
 
 # References
 
-Bibliographic references listed in the GFMR reference document.
+Citation, provenance, and supporting literature for the GFMR reference specification.
 { .lead }
 
 ## GFMR reference
 
-**Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR)**  
-Thomas Sclauzero · Lubomír Bureš
+This website is the GFMR reference specification.
+
+**Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR)**<br>
+Thomas Sclauzero · Lubomír Bureš<br>
+Saltfoss Energy ApS, 2026
+
+## How to cite
+
+Sclauzero, T., & Bureš, L. (2026). *Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR): Reference specification*. Saltfoss Energy ApS. [GFMR website](https://SaltfossEnergy.github.io/GFMR/).
+
+For now, include your access date and, when applicable, the [repository](https://github.com/SaltfossEnergy/GFMR) commit used in your work. Machine-readable citation metadata is available in [CITATION.cff](https://github.com/SaltfossEnergy/GFMR/blob/main/CITATION.cff).
+
+A Zenodo DOI has not yet been assigned. Once a version of the specification is archived, this page and the citation metadata will be updated with its DOI. Cite the DOI for the specific version used for reproducible comparisons.
+
+## Provenance and ownership
+
+Initially developed during the master thesis work by Thomas Sclauzero at Saltfoss Energy ApS under the supervision and guidance of Lubomír Bureš.
+
+© 2026 Saltfoss Energy ApS. Thomas Sclauzero and Lubomír Bureš are credited as authors of the reference specification. See [licences](licenses.md) for reuse and attribution.
 
 ## Bibliography
 

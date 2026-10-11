@@ -121,14 +121,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .md-typeset .lead { font-size: .95rem; line-height: 1.65; color: #626262; margin-bottom: 2rem; }
 .md-typeset strong { font-weight: 600; }
 .md-typeset .headerlink { color: #9b9b9b; }
-.md-typeset .source-note {
-  border-top: 1px solid var(--gfmr-line);
-  color: #646464;
-  font-size: .65rem;
-  line-height: 1.65;
-  margin-top: 2rem;
-  padding-top: 1rem;
-}
 .md-typeset table:not([class]) { display: table; border: 1px solid var(--gfmr-line); border-radius: 0; box-shadow: none; font-size: .75rem; width: 100%; }
 .md-typeset .md-typeset__table { width: 100%; display: block; }
 .md-typeset table:not([class]) th { font-family: var(--md-code-font), monospace; font-size: .61rem; font-weight: 500; background: #f1f1f1; padding: .8rem 1rem; }
@@ -175,6 +167,15 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .hero__visual > p { margin: .8rem 0; }
 .hero__visual a { display: block; }
 .hero__visual img { display: block; width: 100%; height: auto; background: white; }
+/* Display only the core on the homepage; geometry pages retain the full axes. */
+.hero__visual .hero__core { position: relative; aspect-ratio: 1; overflow: hidden; background: white; }
+.hero__visual .hero__core img {
+  position: absolute;
+  width: 141%;
+  max-width: none;
+  left: -22.3%;
+  top: -22.5%;
+}
 .figure-label { display: flex; justify-content: space-between; gap: .5rem; font-family: var(--md-code-font), monospace; color: #585858; font-size: .49rem; line-height: 1.6; letter-spacing: .035em; }
 .figure-label--bottom { font-size: .46rem; }
 .md-typeset .reference-notice { padding: 1.05rem 1.2rem; border-left: 2px solid var(--gfmr-orange); background: #f6f5f2; font-size: .71rem; line-height: 1.7; margin: 1.4rem 0; }
@@ -236,7 +237,7 @@ body:has(.figure-dialog[open]) { overflow: hidden; }
 .disclaimer-block p { margin: 0; }
 .bibliography h3 { padding-top: 1rem; border-top: 1px solid var(--gfmr-line); }
 
-/* Full, unabridged disclaimer on every page. */
+/* Shared footer links to citation and intended use. */
 .gfmr-footer { background: #1b1b1b; color: #f2f2ef; }
 .gfmr-footer__inner { padding: 2rem 1.6rem 1rem; }
 .gfmr-footer__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem; }
@@ -244,9 +245,6 @@ body:has(.figure-dialog[open]) { overflow: hidden; }
 .gfmr-footer__brand span { font-size: .56rem; font-weight: 400; letter-spacing: 0; line-height: 1.6; color: #bcbcbc; border-left: 1px solid #4b4b4b; padding-left: 1.1rem; }
 .gfmr-footer nav { display: flex; flex-wrap: wrap; gap: 1.5rem; font-family: var(--md-code-font), monospace; font-size: .55rem; }
 .gfmr-footer a:hover { color: #ffb765; }
-.gfmr-footer__notice { max-width: 57rem; font-size: .66rem; line-height: 1.75; color: #e0e0df; }
-.gfmr-footer__notice strong { color: #ffb765; font-size: .58rem; letter-spacing: .03em; }
-.gfmr-footer__disclaimer { color: #bcbcbc; font-size: .6rem; line-height: 1.85; max-width: 60rem; }
 .gfmr-footer__bottom { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid #3c3c3c; margin-top: 1.4rem; padding-top: 1rem; font-family: var(--md-code-font), monospace; color: #aaa; font-size: .5rem; }
 
 @media screen and (min-width: 76.25em) {

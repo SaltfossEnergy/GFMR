@@ -1,6 +1,7 @@
 site_name: GFMR
 site_description: Generic FUNaK-Fuelled Thermal Molten Salt Reactor — a reference model for modelling and simulation.
-site_author: Thomas Sclauzero and Lubomír Bureš
+site_author: Saltfoss Energy ApS
+copyright: © 2026 Saltfoss Energy ApS
 site_url: https://SaltfossEnergy.github.io/GFMR/
 repo_name: SaltfossEnergy/GFMR
 repo_url: https://github.com/SaltfossEnergy/GFMR
@@ -33,7 +34,7 @@ theme:
 
 nav:
   - Home: index.md
-  - The model:
+  - Model:
       - Overview: overview.md
       - Design parameters: parameters.md
       - Channel hydraulics: hydraulics.md
@@ -41,14 +42,12 @@ nav:
   - Geometry: geometry.md
   - Materials: materials.md
   - References: references.md
-  - Disclaimer: disclaimer.md
+  - Licences: licenses.md
+  - Disclaimer & intended use: disclaimer.md
 
 plugins:
   - search
   - offline
-
-hooks:
-  - hooks/site.py
 
 markdown_extensions:
   - admonition
@@ -63,7 +62,7 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.superfences
   - pymdownx.snippets:
-      base_path: [includes]
+      base_path: [includes, .]
       check_paths: true
 
 extra_css:
@@ -78,7 +77,6 @@ extra:
 watch:
   - includes
   - overrides
-  - hooks
 
 validation:
   nav:

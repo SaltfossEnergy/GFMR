@@ -25,14 +25,14 @@ A reference problem for the modelling and simulation of graphite-moderated molte
 
 </div>
 
-<p class="hero__authors">Thomas Sclauzero <span aria-hidden="true">/</span> Lubomír Bureš</p>
+<p class="hero__authors">A reference specification by Saltfoss Energy ApS</p>
 
 </div>
 <div class="hero__visual" markdown>
 
 <div class="figure-label"><span>01 / CORE GEOMETRY</span><span>TOP VIEW · x–y</span></div>
 
-[![Top view of the GFMR reactor core, with fuel channels in orange and graphite in grey.](assets/images/geometry-xy.png){ width="3870" height="3896" fetchpriority="high" }](geometry.md#top-view)
+[![Top view of the GFMR reactor core, with fuel channels in orange and graphite in grey.](assets/images/geometry-xy.png){ width="3870" height="3896" fetchpriority="high" }](geometry.md#top-view){ .hero__core }
 
 <div class="figure-label figure-label--bottom"><span>379 FUEL CHANNELS</span><span>HEXAGONAL LATTICE</span></div>
 

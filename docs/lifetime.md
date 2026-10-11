@@ -1,7 +1,6 @@
 ---
 title: Core lifetime
-eyebrow: THE MODEL / CORE LIFETIME
-source: "Source: GFMR reference, Core Lifetime (p. 2)."
+eyebrow: MODEL / CORE LIFETIME
 ---
 
 # Core lifetime

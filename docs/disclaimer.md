@@ -1,7 +1,6 @@
 ---
 title: Disclaimer & intended use
 eyebrow: IMPORTANT / INTENDED USE
-source: "Source: supplied Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR) Model text."
 ---
 
 # Disclaimer & intended use

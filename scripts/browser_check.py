@@ -13,7 +13,7 @@ def main():
     parser.add_argument("--output", type=Path, default=Path("preview-artifacts"))
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
-    pages = ["index", "overview", "parameters", "hydraulics", "lifetime", "geometry", "materials", "references", "disclaimer"]
+    pages = ["index", "overview", "parameters", "hydraulics", "lifetime", "geometry", "materials", "references", "licenses", "disclaimer"]
     errors = []
     requests = []
     results = []
@@ -33,7 +33,7 @@ def main():
                 page.locator("img[loading='lazy']").evaluate_all("images => images.forEach(image => image.loading = 'eager')")
                 page.wait_for_function("Array.from(document.querySelectorAll('img[src]')).every(image => image.complete && image.naturalWidth > 0)")
                 assert page.locator("h1").count() == 1, f"Heading missing or duplicated: {name}"
-                assert page.locator(".gfmr-footer__disclaimer").is_visible(), f"Disclaimer missing: {name}"
+                assert page.locator(".gfmr-footer").get_by_role("link", name="Disclaimer & intended use", exact=True).is_visible(), f"Intended-use link missing: {name}"
                 assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), f"Horizontal page overflow: {name} at {width}px"
                 assert page.locator("img[src]").evaluate_all("images => images.every(image => image.complete && image.naturalWidth > 0)"), f"Broken image: {name}"
                 results.append(f"{name} at {width}px")

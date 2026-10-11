@@ -1,12 +1,43 @@
 # GFMR reference website
 
-A local, Markdown-based publication of the **Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR)** reference model by Thomas Sclauzero and Lubomír Bureš.
+A Markdown-based publication of the **Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR)** reference specification, owned by Saltfoss Energy ApS.
+
+The [website](https://SaltfossEnergy.github.io/GFMR/) is the GFMR reference. It provides the model geometry, design parameters, channel hydraulics, core lifetime criterion, and material definitions. Reference benchmark results will be added later.
+
+## Provenance and citation
+
+Initially developed during the master thesis work by Thomas Sclauzero at Saltfoss Energy ApS under the supervision and guidance of Lubomír Bureš. Both are credited as authors in [CITATION.cff](CITATION.cff) and on the [citation page](https://SaltfossEnergy.github.io/GFMR/references.html).
+
+© 2026 Saltfoss Energy ApS.
+
+## Licences
+
+The repository and website are licensed under the [Apache License, Version 2.0](LICENSE). This covers the GFMR reference specification, website text, material-property tables, original figures, website implementation, scripts, configuration, and OpenMC code snippets. Copyright and attribution are recorded in [NOTICE](NOTICE).
+
+Third-party components retain their own licences; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The [website licence page](docs/licenses.md) describes the scope and attribution.
 
 **IMPORTANT:** This model describes a generic reference design. It is NOT the proprietary Saltfoss reactor design. It is provided as a benchmark and educational tool for the broader nuclear engineering community.
 
-## Disclaimer
+See [Disclaimer & intended use](https://SaltfossEnergy.github.io/GFMR/disclaimer.html) for the full disclaimer.
 
-This model is provided “as is”, without any representation or warranty of any kind, express or implied, including but not limited to the warranties of merchantability, accuracy, completeness, usefulness, fitness for a particular purpose and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in contract, tort or otherwise, arising out of or in connection with this model or its use.
+## Local development
 
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/mkdocs build --strict
+.venv/bin/python scripts/check_site.py
+./scripts/preview.sh
+```
 
+## Archiving a citable version
+
+A Zenodo DOI has not yet been assigned. For the first archive:
+
+1. Complete the remaining material-property specifications and choose a release version.
+2. Connect the repository to Zenodo, using its [GitHub archiving instructions](https://help.zenodo.org/docs/github/archive-software/github-upload/), or upload a versioned archive containing the specification and built website.
+3. Include Thomas Sclauzero and Lubomír Bureš as authors and Saltfoss Energy ApS as the owner/publisher.
+4. Add the assigned version DOI, release version, and release date to `CITATION.cff`; update `docs/references.md` to match. Use the version DOI when comparing results against that specification.
+
+See Zenodo's [DOI versioning guidance](https://zenodo.org/help/versioning). Publishing the website alone does not assign a DOI.
 

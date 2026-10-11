@@ -1,28 +1,27 @@
 ---
 title: Materials
 eyebrow: MATERIALS / PROPERTIES & DEFINITIONS
-source: "Source: GFMR reference, Materials, Listings 1–5 (pp. 2–4)."
 ---
 
 # Materials
 
-Material properties and OpenMC definitions from the GFMR reference.
+Material properties and OpenMC definitions for the GFMR reference specification.
 { .lead }
 
 ## FUNaK fuel { #funak }
 
 Fuel salt. Reference [1](references.md#ref-1).
 
-### Material properties
-
 | Property | Specification |
 | :--- | :--- |
 | Composition | 26.4 UF<sub>4</sub> – 24.7 KF – 48.9 NaF mol% |
+| Reference enrichment | 2.12% (OpenMC uranium enrichment parameter) |
 | Density | ρ = 4.808 − 0.00113 T g/cm<sup>3</sup>, T in °C |
 | Viscosity | η = 736.58 exp(−0.006 T) mPa s, T in °C |
 | Heat capacity | C<sub>p</sub> = 900 J kg<sup>−1</sup> K<sup>−1</sup> |
+| Thermal conductivity | Awaiting specification |
 
-### OpenMC definition
+**OpenMC definition**
 
 ```python title="Listing 1 · FUNaK fuel"
 fuel = openmc.Material(name='fuel')
@@ -39,13 +38,17 @@ fuel.temperature = temperature_fuel_K
 
 Moderator / reflector. References [2](references.md#ref-2), [3](references.md#ref-3).
 
-### Material properties
-
 | Property | Specification |
 | :--- | :--- |
-| Thermal conductivity | K = 25 W m<sup>−1</sup> K<sup>−1</sup> |
+| Composition | Carbon 99.9999 atom%; boron 0.0001 atom% (1 atomic ppm) |
+| Density | 1.7 g/cm<sup>3</sup> |
+| Specific heat capacity | Awaiting specification |
+| Thermal conductivity | K = 25 W m<sup>−1</sup> K<sup>−1</sup> (constant in the current specification) |
+| Thermal conductivity versus dpa | Awaiting specification of K(T, dpa), graphite grade, and irradiation conditions |
 
-### OpenMC definition
+Here, dpa means displacements per atom. The constant conductivity above does not define an irradiation-dependent correlation.
+
+**OpenMC definition**
 
 ```python title="Listing 2 · Graphite moderator"
 moderator = openmc.Material(name='graphite')
@@ -60,9 +63,14 @@ moderator.temperature = t_graphite_K
 
 Absorber. Reference [4](references.md#ref-4).
 
-The absorber is modeled as pure hafnium.
+| Property | Specification |
+| :--- | :--- |
+| Composition | Pure hafnium, natural isotopic composition |
+| Density | 13.3 g/cm<sup>3</sup> |
+| Specific heat capacity | Awaiting specification |
+| Thermal conductivity | Awaiting specification |
 
-### OpenMC definition
+**OpenMC definition**
 
 ```python title="Listing 3 · Hafnium absorber"
 absorber = openmc.Material(name='control_rod')
@@ -75,9 +83,14 @@ absorber.temperature = temperature_fuel_K
 
 Guide tube. Reference [5](references.md#ref-5).
 
-The guide tube material is specified through elemental weight fractions corresponding to a nominal Hastelloy N composition.
+| Property | Specification |
+| :--- | :--- |
+| Composition | Ni 71%, Cr 7%, Mo 16%, Fe 4%, Si 1%, Mn 0.8%, V 0.2% by mass |
+| Density | 8.86 g/cm<sup>3</sup> |
+| Specific heat capacity | Awaiting specification |
+| Thermal conductivity | Awaiting specification |
 
-### OpenMC definition
+**OpenMC definition**
 
 ```python title="Listing 4 · Hastelloy N guide tube"
 guide_tube_material.add_element('Ni', 71, percent_type='wo')
@@ -95,9 +108,14 @@ guide_tube_material.temperature = temperature_fuel_K
 
 Gap. Reference [6](references.md#ref-6).
 
-The channel gap is modeled using helium.
+| Property | Specification |
+| :--- | :--- |
+| Composition | Pure helium, natural isotopic composition |
+| Density | 0.0001785 g/cm<sup>3</sup> (fixed in the OpenMC definition) |
+| Specific heat capacity | Awaiting specification |
+| Thermal conductivity | Awaiting specification |
 
-### OpenMC definition
+**OpenMC definition**
 
 ```python title="Listing 5 · Helium gap"
 helium = openmc.Material(name='helium')
@@ -106,5 +124,4 @@ helium.set_density('g/cm3', 0.0001785)
 helium.temperature = temperature_fuel_K
 ```
 
-The listings above are excerpts from the reference, with typographic quotation marks converted to code quotation marks. They retain the variable names and values in the source; they are not standalone programs.
-{ .source-note }
+Entries marked “Awaiting specification” are not yet defined in the GFMR model. Temperature-dependent properties and the graphite irradiation correlation will be added when those model inputs are available.

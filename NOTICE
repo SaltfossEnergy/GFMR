@@ -1,0 +1,9 @@
+Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR)
+Copyright 2026 Saltfoss Energy ApS
+
+Initially developed during the master thesis work by Thomas Sclauzero at
+Saltfoss Energy ApS under the supervision and guidance of Lubomír Bureš.
+
+The repository and website are licensed under the Apache License, Version 2.0.
+See LICENSE for the full terms. Third-party components retain their own
+licences; see THIRD_PARTY_NOTICES.md.

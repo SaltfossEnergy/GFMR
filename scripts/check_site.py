@@ -1,4 +1,4 @@
-"""Check the publication boundaries, original notice wording, and local links.
+"""Check publication boundaries, intended-use links, citation, and local links.
 
 Run after `mkdocs build --strict`. Uses only the Python standard library.
 """
@@ -61,8 +61,13 @@ def main():
 
     for path, doc in documents.items():
         body = normalize(" ".join(doc.text))
-        assert disclaimer in body, f"Full original disclaimer missing: {path.name}"
-        assert notice in body, f"Original model notice missing: {path.name}"
+        assert "© 2026 Saltfoss Energy ApS" in body, f"Copyright missing: {path.name}"
+        assert any(urlsplit(link).path.endswith("disclaimer.html") for link in doc.links), f"Intended-use link missing: {path.name}"
+        assert any(urlsplit(link).path.endswith("licenses.html") for link in doc.links), f"Licence link missing: {path.name}"
+        assert "Sources: supplied" not in body and "Source: GFMR reference" not in body, f"Obsolete source footer: {path.name}"
+        assert "attached PDF document" not in body, f"Obsolete PDF claim: {path.name}"
+        if path.name != "disclaimer.html":
+            assert disclaimer not in body, f"Repeated full disclaimer: {path.name}"
         for link in doc.links:
             parts = urlsplit(link)
             if parts.scheme or parts.netloc:
@@ -79,11 +84,28 @@ def main():
             if parts.fragment and target in documents:
                 assert unquote(parts.fragment) in documents[target].ids, f"Broken anchor in {path.name}: {link}"
 
+    intended_use = normalize(" ".join(documents[SITE / "disclaimer.html"].text))
+    assert intended_use.count(disclaimer) == 1, "Full original disclaimer must appear once on its dedicated page."
+    assert intended_use.count(notice) == 1, "Original model notice missing or repeated on its dedicated page."
+    home = normalize(" ".join(documents[SITE / "index.html"].text))
+    assert home.count(notice) == 1, "Original homepage model notice missing or repeated."
+
     overview = normalize(" ".join(documents[SITE / "overview.html"].text))
     for line in source.splitlines():
         line = normalize(line.removeprefix("* "))
-        if line:
-            assert line in overview, f"Supplied text missing from overview: {line}"
+        if line and not line.startswith(("IMPORTANT:", "DISCLAIMER:", "The model is described in detail")):
+            assert line in overview, f"Model feature missing from overview: {line}"
+    assert "under the supervision and guidance of Lubomír Bureš" in overview, "Model provenance missing."
+    assert "Reference results will be added" in overview, "Benchmark status missing."
+    assert (ROOT / "CITATION.cff").is_file(), "Citation metadata missing."
+    assert (ROOT / "LICENSE").is_file() and (ROOT / "NOTICE").is_file(), "Repository licence or attribution notice missing."
+    references = normalize(" ".join(documents[SITE / "references.html"].text))
+    assert "This website is the GFMR reference specification." in references, "Website citation missing."
+    assert "A Zenodo DOI has not yet been assigned." in references, "DOI status missing."
+
+    materials = documents[SITE / "materials.html"]
+    assert {"funak", "graphite", "hafnium", "hastelloy-n", "helium"} <= materials.ids, "Material sections missing."
+    assert "material-properties" not in materials.ids and "openmc-definition" not in materials.ids, "Repeated material subheadings remain."
 
     forbidden = ("fuel cycle", "online refuelling", "daily additions", "redox control", "fission product removal", "salt bubbling", "salt spraying")
     for path in SITE.rglob("*"):
@@ -100,7 +122,7 @@ def main():
     ):
         assert (ROOT / original).read_bytes() == (SITE / "assets/images" / published).read_bytes(), f"Original figure changed: {original}"
 
-    print(f"PASS: {len(documents)} pages; all local links and anchors; full supplied text; exact disclaimer and notice on every page; original figures unchanged; excluded section absent from pages, search, and assets.")
+    print(f"PASS: {len(documents)} pages; local links and anchors; model features and provenance; dedicated disclaimer; Saltfoss copyright; citation and benchmark status; material sections; original figures unchanged; publication boundaries.")
 
 
 if __name__ == "__main__":

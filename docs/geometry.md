@@ -1,7 +1,6 @@
 ---
 title: Model geometry
 eyebrow: GEOMETRY / CORE & CHANNELS
-source: "Source: GFMR reference, Model Geometry, Figures 1–3 (pp. 5–7). Original PNG figures supplied with the model."
 ---
 
 # Model geometry

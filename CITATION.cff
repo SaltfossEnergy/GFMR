@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: >-
+  Please cite the GFMR reference specification using this metadata.
+  Until a Zenodo DOI is assigned, include the website access date and
+  the repository commit used in your work.
+type: dataset
+license: Apache-2.0
+title: "Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR): Reference specification"
+abstract: >-
+  A software-agnostic reference specification for modelling and simulation
+  of a generic graphite-moderated molten salt reactor, including geometry,
+  design parameters, channel hydraulics, core lifetime, and material definitions.
+authors:
+  - family-names: Sclauzero
+    given-names: Thomas
+    affiliation: Saltfoss Energy ApS
+  - family-names: Bureš
+    given-names: Lubomír
+    affiliation: Saltfoss Energy ApS
+url: "https://SaltfossEnergy.github.io/GFMR/"
+repository-code: "https://github.com/SaltfossEnergy/GFMR"
+keywords:
+  - molten salt reactor
+  - GFMR
+  - reference specification
+  - FUNaK
+  - graphite

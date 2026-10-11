@@ -1,7 +1,6 @@
 ---
 title: Channel hydraulics
-eyebrow: THE MODEL / CHANNEL HYDRAULICS
-source: "Source: GFMR reference, Introduction and Channel Velocities and Pressure Losses, Table 1 (p. 1)."
+eyebrow: MODEL / CHANNEL HYDRAULICS
 ---
 
 # Channel hydraulics
@@ -16,8 +15,6 @@ Two fuel velocity zones, with a higher velocity in the inner region to enhance h
 | Inner channels | 1.70 m s<sup>−1</sup> | 14.3 kPa |
 | Outer channels | 1.03 m s<sup>−1</sup> | 6.0 kPa |
 | Control rod channels | 1.74 m s<sup>−1</sup> | 34 kPa |
-
-*Table 1 in the reference: Hydraulic values.*
 
 ## Flow configuration
 
