@@ -33,7 +33,6 @@ python3 -m venv .venv
 ```
 
 ## Archiving a citable version
-
 A Zenodo DOI has not yet been assigned. For the first archive:
 
 1. Review the reference specification and choose a release version.
