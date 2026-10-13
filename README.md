@@ -51,7 +51,6 @@ python3 -m venv .venv
 ```
 
 ## Archiving a citable version
-
 See the [citation page](https://SaltfossEnergy.github.io/GFMR/references.html) for the current DOI status. The repository is prepared for Zenodo's GitHub integration, with explicit author and licence metadata in [`.zenodo.json`](.zenodo.json), citation metadata in [`CITATION.cff`](CITATION.cff), and release validation in GitHub Actions.
 
 Follow [RELEASING.md](RELEASING.md) to connect Zenodo, prepare the release, and record its DOI. The preparation command builds and verifies the website and creates `archive/gfmr-website.zip`. Commit that ZIP before tagging so the built website is preserved inside Zenodo's source archive. The release workflow also attaches it to the GitHub release for convenient download.
