@@ -1,3 +1,21 @@
+<!--
+README.md — Project documentation for the GFMR reference website.
+
+Copyright 2026 Saltfoss Energy ApS
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # GFMR reference website
 
 A Markdown-based publication of the **Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR)** reference specification, owned by Saltfoss Energy ApS.
@@ -16,7 +34,7 @@ The repository and website are licensed under the [Apache License, Version 2.0](
 
 Third-party components retain their own licences; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The [website licence page](docs/licenses.md) describes the scope and attribution.
 
-Original implementation and configuration files carry the Apache 2.0 copyright and licence declaration. The website build includes copies of `LICENSE`, `NOTICE`, third-party notices, and `CITATION.cff`, so the published or downloaded website carries its licence and citation metadata too.
+Original Markdown documentation, implementation, and configuration files carry the Apache 2.0 copyright and licence declaration. The website build includes copies of `LICENSE`, `NOTICE`, third-party notices, and `CITATION.cff`, so the published or downloaded website carries its licence and citation metadata too.
 
 **IMPORTANT:** This model describes a generic reference design. It is NOT the proprietary Saltfoss reactor design. It is provided as a benchmark and educational tool for the broader nuclear engineering community.
 
@@ -34,12 +52,9 @@ python3 -m venv .venv
 
 ## Archiving a citable version
 
-A Zenodo DOI has not yet been assigned. For the first archive:
+See the [citation page](https://SaltfossEnergy.github.io/GFMR/references.html) for the current DOI status. The repository is prepared for Zenodo's GitHub integration, with explicit author and licence metadata in [`.zenodo.json`](.zenodo.json), citation metadata in [`CITATION.cff`](CITATION.cff), and release validation in GitHub Actions.
 
-1. Review the reference specification and choose a release version.
-2. Connect the repository to Zenodo, using its [GitHub archiving instructions](https://help.zenodo.org/docs/github/archive-software/github-upload/), or upload a versioned archive containing the specification and built website.
-3. Include Thomas Sclauzero and Lubomír Bureš as authors and Saltfoss Energy ApS as the owner/publisher.
-4. Add the assigned version DOI, release version, and release date to `CITATION.cff`; update `docs/references.md` to match. Use the version DOI when comparing results against that specification.
+Follow [RELEASING.md](RELEASING.md) to connect Zenodo, prepare the release, and record its DOI. The preparation command builds and verifies the website and creates `archive/gfmr-website.zip`. Commit that ZIP before tagging so the built website is preserved inside Zenodo's source archive. The release workflow also attaches it to the GitHub release for convenient download.
 
-See Zenodo's [DOI versioning guidance](https://zenodo.org/help/versioning). Publishing the website alone does not assign a DOI.
+The website's citation and DOI status are generated from `CITATION.cff`. Use the version DOI when comparing results against a particular specification; see Zenodo's [DOI versioning guidance](https://zenodo.org/help/versioning). Publishing the website alone does not assign a DOI.
 

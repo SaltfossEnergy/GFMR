@@ -3,6 +3,24 @@ title: References
 eyebrow: DOCUMENTATION / REFERENCES
 ---
 
+<!--
+docs/references.md — Citation and references for the GFMR reference specification.
+
+Copyright 2026 Saltfoss Energy ApS
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # References
 
 Citation, provenance, and supporting literature for the GFMR reference specification.
@@ -18,11 +36,11 @@ Saltfoss Energy ApS, 2026
 
 ## How to cite
 
-Sclauzero, T., & Bureš, L. (2026). *Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR): Reference specification*. Saltfoss Energy ApS. [GFMR website](https://SaltfossEnergy.github.io/GFMR/).
+<!-- GFMR_CITATION -->
 
-For now, include your access date and, when applicable, the [repository](https://github.com/SaltfossEnergy/GFMR) commit used in your work. Machine-readable citation metadata is available in [CITATION.cff](assets/CITATION.cff), also included in the repository.
+Machine-readable citation metadata is available in [CITATION.cff](assets/CITATION.cff), also included in the [repository](https://github.com/SaltfossEnergy/GFMR).
 
-A Zenodo DOI has not yet been assigned. Once a version of the specification is archived, this page and the citation metadata will be updated with its DOI. Cite the DOI for the specific version used for reproducible comparisons.
+<!-- GFMR_DOI_STATUS -->
 
 ## Provenance and ownership
 

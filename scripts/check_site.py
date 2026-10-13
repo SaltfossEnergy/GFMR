@@ -20,6 +20,7 @@ Run after `mkdocs build --strict`. Uses only the Python standard library.
 """
 
 from html.parser import HTMLParser
+import json
 from pathlib import Path
 import re
 from urllib.parse import unquote, urlsplit
@@ -117,13 +118,23 @@ def main():
     assert (ROOT / "LICENSE").is_file() and (ROOT / "NOTICE").is_file(), "Repository licence or attribution notice missing."
     references = normalize(" ".join(documents[SITE / "references.html"].text))
     assert "This website is the GFMR reference specification." in references, "Website citation missing."
-    assert "A Zenodo DOI has not yet been assigned." in references, "DOI status missing."
+    metadata = json.loads((ROOT / ".zenodo.json").read_text(encoding="utf-8"))
+    citation_source = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+    doi = re.search(r'^doi:\s*[\"\']?([^\s\"\']+)', citation_source, re.MULTILINE)
+    if doi:
+        assert doi[1] in references, "Assigned version DOI missing from citation page."
+        assert f"https://doi.org/{doi[1]}" in documents[SITE / "references.html"].links, "Version DOI link missing."
+        assert metadata["version"] in references, "Release version missing from citation page."
+        assert "A Zenodo DOI has not yet been assigned." not in references, "Outdated DOI status."
+    else:
+        assert "A Zenodo DOI has not yet been assigned." in references, "DOI status missing."
 
     for original, published in (
         ("LICENSE", "assets/legal/LICENSE.txt"),
         ("NOTICE", "assets/legal/NOTICE.txt"),
         ("THIRD_PARTY_NOTICES.md", "assets/legal/THIRD_PARTY_NOTICES.txt"),
         ("CITATION.cff", "assets/CITATION.cff"),
+        (".zenodo.json", "assets/zenodo.json"),
     ):
         assert (ROOT / original).read_bytes() == (SITE / published).read_bytes(), f"Publication metadata missing or outdated: {published}"
 

@@ -18,6 +18,8 @@
 
 from pathlib import Path
 
+import yaml
+
 from mkdocs.structure.files import File
 
 
@@ -30,6 +32,25 @@ def on_files(files, config):
         ("NOTICE", "assets/legal/NOTICE.txt"),
         ("THIRD_PARTY_NOTICES.md", "assets/legal/THIRD_PARTY_NOTICES.txt"),
         ("CITATION.cff", "assets/CITATION.cff"),
+        (".zenodo.json", "assets/zenodo.json"),
     ):
         files.append(File.generated(config, destination, abs_src_path=str(ROOT / source)))
     return files
+
+
+def on_page_markdown(markdown, page, **kwargs):
+    if page.file.src_uri != "references.md":
+        return markdown
+    cff = yaml.safe_load((ROOT / "CITATION.cff").read_text(encoding="utf-8"))
+    authors = [f'{author["family-names"]}, {author["given-names"][0]}.' for author in cff["authors"]]
+    year = str(cff.get("date-released", "2026"))[:4]
+    version = f' (Version {cff["version"]})' if cff.get("version") else ""
+    citation = f'{", ".join(authors[:-1])}, & {authors[-1]} ({year}). *{cff["title"]}*{version}. Saltfoss Energy ApS. '
+    if cff.get("doi"):
+        doi_url = f'https://doi.org/{cff["doi"]}'
+        citation += f'[{cff["doi"]}]({doi_url}).'
+        status = f'Archived release: **{cff["version"]}**, published **{cff["date-released"]}**. Cite this version DOI for reproducible comparisons. Later website edits may differ from this archived release.'
+    else:
+        citation += f'[GFMR website]({cff["url"]}).'
+        status = "A Zenodo DOI has not yet been assigned. Until a release is archived, include your access date and the repository commit used in your work. Cite the DOI for the specific version used once it is available."
+    return markdown.replace("<!-- GFMR_CITATION -->", citation).replace("<!-- GFMR_DOI_STATUS -->", status)

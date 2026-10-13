@@ -16,9 +16,9 @@
 
 cff-version: 1.2.0
 message: >-
-  Please cite the GFMR reference specification using this metadata.
-  Until a Zenodo DOI is assigned, include the website access date and
-  the repository commit used in your work.
+  Please cite the GFMR reference specification using the DOI for the
+  archived release you used. Until a DOI is assigned, include the
+  website access date and the repository commit used in your work.
 type: dataset
 license: Apache-2.0
 title: "Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR): Reference specification"
@@ -41,3 +41,5 @@ keywords:
   - reference specification
   - FUNaK
   - graphite
+version: "1.0.0"
+date-released: "2026-10-13"

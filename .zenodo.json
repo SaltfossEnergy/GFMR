@@ -1,0 +1,45 @@
+{
+  "title": "Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR): Reference specification",
+  "description": "A software-agnostic reference specification for modelling and simulation of a generic graphite-moderated molten salt reactor, including geometry, design parameters, channel hydraulics, core lifetime, and material definitions.",
+  "upload_type": "dataset",
+  "creators": [
+    {
+      "name": "Sclauzero, Thomas",
+      "affiliation": "Saltfoss Energy ApS"
+    },
+    {
+      "name": "Bureš, Lubomír",
+      "affiliation": "Saltfoss Energy ApS"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Saltfoss Energy ApS",
+      "type": "RightsHolder"
+    }
+  ],
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "molten salt reactor",
+    "GFMR",
+    "reference specification",
+    "FUNaK",
+    "graphite"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://SaltfossEnergy.github.io/GFMR/",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/SaltfossEnergy/GFMR",
+      "relation": "isDerivedFrom",
+      "scheme": "url"
+    }
+  ],
+  "version": "1.0.0",
+  "publication_date": "2026-10-13"
+}
