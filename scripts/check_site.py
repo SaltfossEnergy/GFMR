@@ -124,10 +124,12 @@ def main():
     if doi:
         assert doi[1] in references, "Assigned version DOI missing from citation page."
         assert f"https://doi.org/{doi[1]}" in documents[SITE / "references.html"].links, "Version DOI link missing."
+        assert f"https://doi.org/{doi[1]}" in documents[SITE / "index.html"].links, "Homepage DOI badge missing."
         assert metadata["version"] in references, "Release version missing from citation page."
         assert "A Zenodo DOI has not yet been assigned." not in references, "Outdated DOI status."
     else:
         assert "A Zenodo DOI has not yet been assigned." in references, "DOI status missing."
+        assert 'class="doi-badge"' not in (SITE / "index.html").read_text(encoding="utf-8"), "Homepage shows an unassigned DOI."
 
     for original, published in (
         ("LICENSE", "assets/legal/LICENSE.txt"),

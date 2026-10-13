@@ -181,6 +181,12 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .hero__actions .md-button { display: inline-flex; align-items: center; gap: 1.65rem; }
 .md-typeset .hero__authors { font-family: var(--md-code-font), monospace; color: #6a6a6a; font-size: .53rem; margin: 0; }
 .hero__authors span { padding: 0 .4rem; color: #a9a9a9; }
+.md-typeset .hero__citation { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin: .85rem 0 0; font-family: var(--md-code-font), monospace; font-size: .53rem; }
+.md-typeset .doi-badge { display: inline-flex; max-width: 100%; border: 1px solid var(--gfmr-line); color: #1b1b1b; line-height: 1.8; }
+.doi-badge__label { padding: .15rem .4rem; background: #1b1b1b; color: #fff; }
+.doi-badge__value { padding: .15rem .4rem; overflow-wrap: anywhere; }
+.md-typeset .doi-badge:hover, .md-typeset .hero__cite-link:hover { color: #a84b00; }
+.md-typeset .hero__cite-link { color: #585858; }
 .hero__visual { min-width: 0; background: var(--gfmr-soft); border: 1px solid #e5e5e1; padding: 1rem; align-self: center; }
 .hero__visual > p { margin: .8rem 0; }
 .hero__visual a { display: block; }

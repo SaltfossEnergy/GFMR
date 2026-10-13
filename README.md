@@ -18,6 +18,8 @@ limitations under the License.
 
 # GFMR reference website
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23348200.svg)](https://doi.org/10.5281/zenodo.23348200)
+
 A Markdown-based publication of the **Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR)** reference specification, owned by Saltfoss Energy ApS.
 
 The [website](https://SaltfossEnergy.github.io/GFMR/) is the GFMR reference. It provides the model geometry, design parameters, channel hydraulics, core lifetime criterion, and material definitions. Reference benchmark results will be added later.
@@ -25,6 +27,8 @@ The [website](https://SaltfossEnergy.github.io/GFMR/) is the GFMR reference. It 
 ## Provenance and citation
 
 Initially developed during the master thesis work by Thomas Sclauzero at Saltfoss Energy ApS under the supervision and guidance of Lubomír Bureš. Both are credited as authors in [CITATION.cff](CITATION.cff) and on the [citation page](https://SaltfossEnergy.github.io/GFMR/references.html).
+
+For version 1.0.0, cite: Sclauzero, T., & Bureš, L. (2026). *Generic FUNaK-Fuelled Thermal Molten Salt Reactor (GFMR): Reference specification* (Version 1.0.0). Saltfoss Energy ApS. <https://doi.org/10.5281/zenodo.23348200>.
 
 © 2026 Saltfoss Energy ApS.
 

@@ -106,9 +106,14 @@ class ZenodoReleaseTests(unittest.TestCase):
         page = (self.checkout / "site/references.html").read_text()
         self.assertIn("https://doi.org/10.5281/zenodo.1234567", page)
         self.assertNotIn("A Zenodo DOI has not yet been assigned.", page)
+        homepage = (self.checkout / "site/index.html").read_text()
+        self.assertIn('class="doi-badge"', homepage)
+        self.assertIn('href="https://doi.org/10.5281/zenodo.1234567"', homepage)
+        self.assertIn('href="references.html#how-to-cite"', homepage)
         self.run_command("scripts/zenodo.py", "prepare", "--version", "9.8.8", "--date", "2026-01-02")
         self.assertNotIn("\ndoi:", (self.checkout / "CITATION.cff").read_text())
         self.assertNotIn("doi", json.loads((self.checkout / ".zenodo.json").read_text()))
+        self.assertNotIn('class="doi-badge"', (self.checkout / "site/index.html").read_text())
 
 
 if __name__ == "__main__":

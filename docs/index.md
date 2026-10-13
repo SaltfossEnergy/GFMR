@@ -45,6 +45,8 @@ A reference problem for the modelling and simulation of graphite-moderated molte
 
 <p class="hero__authors">A reference specification by Saltfoss Energy ApS</p>
 
+<!-- GFMR_DOI_BADGE -->
+
 </div>
 <div class="hero__visual" markdown>
 

@@ -39,9 +39,21 @@ def on_files(files, config):
 
 
 def on_page_markdown(markdown, page, **kwargs):
-    if page.file.src_uri != "references.md":
+    if page.file.src_uri not in {"index.md", "references.md"}:
         return markdown
     cff = yaml.safe_load((ROOT / "CITATION.cff").read_text(encoding="utf-8"))
+    if page.file.src_uri == "index.md":
+        badge = ""
+        if cff.get("doi"):
+            badge = (
+                '<p class="hero__citation">'
+                f'<a class="doi-badge" href="https://doi.org/{cff["doi"]}" '
+                f'aria-label="Archived GFMR version {cff["version"]}, DOI {cff["doi"]}">'
+                '<span class="doi-badge__label">DOI</span>'
+                f'<span class="doi-badge__value">{cff["doi"]}</span></a>'
+                '<a class="hero__cite-link" href="references.html#how-to-cite">How to cite →</a></p>'
+            )
+        return markdown.replace("<!-- GFMR_DOI_BADGE -->", badge)
     authors = [f'{author["family-names"]}, {author["given-names"][0]}.' for author in cff["authors"]]
     year = str(cff.get("date-released", "2026"))[:4]
     version = f' (Version {cff["version"]})' if cff.get("version") else ""
